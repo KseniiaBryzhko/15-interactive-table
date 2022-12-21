@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інтерактивна таблиця даних</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- основний контейнер -->
+  <div class="wrapper">
+
+    <!-- загальна оболонка таблиці -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <!-- заголовок-шапка таблиці -->
+      <thead>
+        <!-- рядок таблиці -->
+        <tr>
+          <!-- особливі комірки у рядку в шапці таблиці -->
+          <th class="header__id">ID
+            <!-- кнопки стрілки -->
+            <button class="sort descending">
+              <!-- зображення, складене з двох частин стрілок -->
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- стрілка вгору -->
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" fill="#363DAA" />
+                <!-- стрілка вниз -->
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                  fill="#DDE8F7" />
+              </svg>
+            </button>
+          </th>
+          <th>Name
+            <button class="sort descending">
+              <!-- зображення, складене з двох частин стрілок -->
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- стрілка вгору -->
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" fill="#363DAA" />
+                <!-- стрілка вниз -->
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                  fill="#DDE8F7" />
+              </svg>
+            </button>
+          </th>
+          <th>Email Address
+            <button class="sort descending">
+              <!-- зображення, складене з двох частин стрілок -->
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- стрілка вгору -->
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" fill="#363DAA" />
+                <!-- стрілка вниз -->
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                  fill="#DDE8F7" />
+              </svg>
+            </button>
+          </th>
+          <th>Job Title
+            <button class="sort descending">
+              <!-- зображення, складене з двох частин стрілок -->
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- стрілка вгору -->
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" fill="#363DAA" />
+                <!-- стрілка вниз -->
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"
+                  fill="#DDE8F7" />
+              </svg>
+            </button>
+          </th>
+        </tr>
+      </thead>
+
+      <!-- тіло таблиці -->
+      <tbody>
+        <!-- рядок таблиці -->
+        <tr class="edit">
+          <!-- комірка у рядку -->
+          <td>1</td>
+          <!-- комірка з вкладеним полем для введення інформації -->
+          <td><input type="text" name="person-name-1" value="Cameron Williamson"></td>
+          <td><input type="email" name="email-1" value="cameron.williamson@example.com"></td>
+          <td><input type="text" name="title-1" value="Software Developer"></td>
+          <td>
+            <!-- кнопки редагування/оновлення даних -->
+            <button class="edit">
+              <img src="" alt="">
+              <img src="./images/edit.svg" alt="edit">
+            </button>
+            <button class="update">
+              <img src="" alt="">
+              <img src="./images/update.svg" alt="edit">
+            </button>
+          </td>
+        </tr>
+        <tr class="edit">
+          <!-- комірка у рядку -->
+          <td>2</td>
+          <!-- комірка з вкладеним полем для введення інформації -->
+          <td><input type="text" name="person-name-1" value="Cameron Williamson"></td>
+          <td><input type="email" name="email-1" value="cameron.williamson@example.com"></td>
+          <td><input type="text" name="title-1" value="Software Developer"></td>
+          <td>
+            <!-- кнопки редагування/оновлення даних -->
+            <button class="edit">
+              <img src="" alt="">
+              <img src="./images/edit.svg" alt="edit">
+            </button>
+            <button class="update">
+              <img src="" alt="">
+              <img src="./images/update.svg" alt="edit">
+            </button>
+          </td>
+        </tr>
+      </tbody>
+
+      <!-- футер таблиці -->
+      <tfoot>
+        <tr class="edit">
+          <td colspan="2">
+            30 Results
+          </td>
+          <td colspan="3">
+            <div class="pagination">
+              <button class="previous" id="previous">
+                <img src="./images/chevron--left.svg" alt="chevron">
+              </button>
+
+              <input type="text" name="currentPage" value="1">
+
+              <span>&nbsp;of&nbsp;</span>
+              <span id="totalPages">3</span>
+
+              <button class="next" id="next">
+                <img src="./images/chevron--right.svg" alt="chevron">
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+
+</html>

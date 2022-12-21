@@ -1,0 +1,136 @@
+/* підключення шрифтів */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* селектор кореневого елементу сторінки */
+:root {
+  --primary: #363daa;
+  --selected: #363daa;
+  --unselected: #dde8f7;
+}
+
+/* видима частина вікна браузера */
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* основний контейнер */
+.wrapper {
+  width: 1300px;
+}
+
+/* особливі комірки у рядку в шапці таблиці */
+th {
+  border-bottom: 2px solid black;
+  padding: 15px 16px;
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+  color: var(--primary);
+  line-height: 20px;
+}
+
+/* комбінований селектор комірки з певним класом стилів */
+th.header__id {
+  padding-left: 0;
+}
+
+/* селектор всіх комірок тіла та футера */
+td {
+  border-bottom: 2px solid #dde8f7;
+  padding: 5px 12px 5px 0;
+}
+
+/* кнопка сортування */
+.sort {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* зображення в кнопці сортування */
+.sort svg {
+  fill: var(--unselected);
+}
+
+/* контроль кольору елементів сортування при активному стані */
+.sort.ascending svg .ascending,
+.sort.descending svg .descending {
+  fill: var(--selected);
+}
+
+/* поля введення даних */
+input[type="text"],
+input[type="email"] {
+  background: none;
+  padding: 0 16px;
+  height: 55px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* налаштування для полів введення, коли вони доступні для редагування */
+tr.edit input[type="text"],
+tr.edit input[type="email"] {
+  background: #edf4f9;
+}
+
+/* базові налаштування елементів з класами відповідно до їх стану */
+.update,
+.edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.update {
+  display: none;
+}
+
+tr.edit .update {
+  display: block;
+}
+
+tr.edit .edit {
+  display: none;
+}
+
+/* кастомізація останнього рядка в тілі таблиці */
+tbody tr:last-child td {
+  border-bottom: 2px solid black;
+}
+
+/* елементи керування перемикання сторінок з таблицями */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+/* кнопка в системі керування перемиканнями */
+.pagination button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* поле введення в системі керування перемиканням */
+.pagination input[type="text"] {
+  width: 50px;
+  text-align: center;
+}
+
+/* налаштування комірок у футері */
+tfoot td {
+  border-bottom: 0;
+}
